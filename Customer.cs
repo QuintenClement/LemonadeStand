@@ -22,12 +22,6 @@ namespace LemonadeStand
         {
             
         }
-        public void AmountToSpend()
-        {
-            Random rnd = new Random();
-            int moneyToSpend = rnd.Next(3, 15);
-
-        }
         public void TempEffectsOnSales()
         {
             Random rnd = new Random();

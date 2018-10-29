@@ -14,6 +14,7 @@ namespace LemonadeStand
         public int cups = 10;
         public int lemonsUsed;
         public int sugarUsed;
+        public int icePerCup;
 
         public Player()
         {
@@ -48,8 +49,8 @@ namespace LemonadeStand
             }
             if (lemonsUsed >= 1 && lemonsUsed <= 9)
             {
-                Console.WriteLine("You will use " + lemonsUsed + " for every pitcher of lemonade you need");
-                whatIGots.lemonsPerPitcher -= lemonsUsed;
+                Console.WriteLine("You will use " + lemonsUsed + " lemons for every pitcher of lemonade you need");
+                whatIGots.lemonsPerPitcher = lemonsUsed;
             }
         }
 
@@ -76,6 +77,31 @@ namespace LemonadeStand
             {
                 Console.WriteLine("You will use " + sugarUsed + " cups of sugar for every pitcher of lemonade you need.");
                 whatIGots.sugarPerPitcher = sugarUsed;
+            }
+        }
+        public void SetIceInRecipe()
+        {
+            Console.WriteLine("How much ice would you like to add to each cup of lemonade?");
+            bool ice = Int32.TryParse(Console.ReadLine(), out icePerCup);
+            while (ice == false)
+            {
+                Console.WriteLine("How much ice would you like to add to each cup of lemonade?");
+                ice = Int32.TryParse(Console.ReadLine(), out icePerCup);
+            }
+            if (icePerCup > 15)
+            {
+                Console.WriteLine("How much ice would you like to add to each cup of lemonade?");
+                SetIceInRecipe();
+            }
+            if (icePerCup < 1)
+            {
+                Console.WriteLine("How much ice would you like to add to each cup of lemonade?");
+                SetSugarInRecipe();
+            }
+            if (icePerCup >= 1 && icePerCup <= 14)
+            {
+                Console.WriteLine("You will use " + icePerCup + " ice cubes for every cup of lemonade made.");
+                whatIGots.icePerPitcher -= icePerCup * 10;
             }
         }
     }

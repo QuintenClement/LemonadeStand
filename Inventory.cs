@@ -9,7 +9,7 @@ namespace LemonadeStand
     class Inventory
     {
         public int lemons = 0;
-        public int ice = 0;
+        public int icePerPitcher = 0;
         public int cups = 0;
         public int sugar = 0;
         public int lemonsPerPitcher;
