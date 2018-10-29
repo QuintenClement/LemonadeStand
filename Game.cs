@@ -8,12 +8,15 @@ namespace LemonadeStand
 {
     class Game
     {
+
+        public Shop shop;
+        public Player player;
         public int temperature;
         public string weatherForecast;
         
         public void RunGame()
         {
-
+            shop.BuyLemons(player);
         }
         public void RandomTemp()
         {
@@ -29,7 +32,7 @@ namespace LemonadeStand
             {
                 temperature = cool;
             }
-            else if (weatherForecast == "Storms")
+            else if (weatherForecast == "Stormy and Muggy")
             {
                 temperature = warm;
             }
@@ -45,7 +48,7 @@ namespace LemonadeStand
             List<string> Weather = new List<string>();
             Weather.Add("Sunny and Cool");
             Weather.Add("Overcast and Cool");
-            Weather.Add("Storms");
+            Weather.Add("Stormy and Muggy");
             Weather.Add("Sunny and Hot");
 
             Random rnd = new Random();

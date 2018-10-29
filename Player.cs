@@ -8,22 +8,22 @@ namespace LemonadeStand
 {
     class Player
     {
-        public int lemons = 0;
-        public int ice = 0;
-        public int sugar = 0;
-        public int cups = 0;
-        public int money = 20;
+        public double money;
+        public Inventory whatIGots;
+        public int pitcher = 10;
 
-        public Player player = new Player();
-
-        public void PurchaseItems()
+        public Player()
         {
-
+            money = 20;
+            whatIGots = new Inventory();
         }
-        public void BuyItems()
-        {
 
-        }
+
+
+
+
+
+
         public void SetRecipe()
         {
 

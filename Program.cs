@@ -11,7 +11,9 @@ namespace LemonadeStand
         static void Main(string[] args)
         { }
             public Game Game = new Game();
-        }
+        
     }
+
 }
+
 

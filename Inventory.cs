@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Inventory : Player
+    class Inventory
     {
-        List<int> AmountOnHand = new List<int>();
+        public int lemons = 0;
+        public int ice = 0;
+        public int cups = 0;
+        public int sugar = 0;
     }
 }
