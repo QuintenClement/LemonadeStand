@@ -13,6 +13,11 @@ namespace LemonadeStand
         public int sugar;
         public int cups;
 
+        public Shop()
+        {
+
+        }
+
         public void BuyLemons(Player player)
         {
             Console.WriteLine("How many lemons would you like to buy? $3.5/each");

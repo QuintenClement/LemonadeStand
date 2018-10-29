@@ -12,6 +12,14 @@ namespace LemonadeStand
         public int cost;
         public int grossSales;
         public int netSales;
+        public Customer customer;
 
+
+        public Day()
+        {
+
+        }
+
+        
     }
 }

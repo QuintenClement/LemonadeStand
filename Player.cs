@@ -10,8 +10,6 @@ namespace LemonadeStand
     {
         public double money;
         public Inventory whatIGots;
-        public int pitcher;
-        public int cups = 10;
         public int lemonsUsed;
         public int sugarUsed;
         public int icePerCup;
