@@ -8,7 +8,7 @@ namespace LemonadeStand
 {
     class Game
     {
-
+        public Customer customer;
         public Shop shop;
         public Player player;
         public int temperature;

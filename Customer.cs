@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     class Customer
     {
+        public Game game;
         public int moneyToSpend;
         public int chanceToBuyLemonade;
 
@@ -16,40 +17,31 @@ namespace LemonadeStand
         //add or subtract based on weather or temp or recipe
         public void BuyLemonade()
         {
-
+            
         }
         public void AmountToSpend()
         {
             Random rnd = new Random();
-            int moneyToSpend = rnd.Next(0, 15);
+            int moneyToSpend = rnd.Next(3, 15);
 
         }
-        public void WantForLemonade()
+        public void TempEffectsOnSales()
         {
             Random rnd = new Random();
-            int lowChanceToBuy = rnd.Next(1, 12);
-            int medChanceToBuy = rnd.Next(1, 6);
-            int highChanceToBuy = rnd.Next(1, 2);
-            if (moneyToSpend > 0 && moneyToSpend < 5)
+            int highChanceToBuy = rnd.Next(30, 100);
+            int medChanceToBuy = rnd.Next(50, 100);
+            int lowChanceToBuy = rnd.Next(1, 20);
+            if (game.temperature > 85)
             {
-                if (lowChanceToBuy == 4 || lowChanceToBuy == 7)
-                {
-                    BuyLemonade(); 
-                }
+                chanceToBuyLemonade = highChanceToBuy;
             }
-            else if (moneyToSpend > 5 && moneyToSpend < 11)
+            else if (game.temperature > 70 && game.temperature < 85)
             {
-                if (medChanceToBuy == 2 || medChanceToBuy == 5)
-                {
-                    BuyLemonade();
-                }
+                chanceToBuyLemonade = medChanceToBuy;
             }
-            else if (moneyToSpend > 11 && moneyToSpend < 15)
+            else if (game.temperature < 70)
             {
-                if (highChanceToBuy == 1)
-                {
-                    BuyLemonade();
-                }
+                chanceToBuyLemonade = lowChanceToBuy;
             }
         }
     }
