@@ -9,9 +9,10 @@ namespace LemonadeStand
     class Program
     {
         static void Main(string[] args)
-        { }
-            public Game Game = new Game();
-        
+        {
+            Game game = new Game();
+            game.RunGame();
+        }
     }
 
 }

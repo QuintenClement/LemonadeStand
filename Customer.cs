@@ -11,8 +11,11 @@ namespace LemonadeStand
         public Game game;
         public int moneyToSpend;
         public int chanceToBuyLemonade;
-
-        public Customer customer = new Customer();
+        public Customer()
+        {
+            Customer customer = new Customer();
+        }
+        
         //chance to buy = 50%
         //add or subtract based on weather or temp or recipe
         public void BuyLemonade()

@@ -13,6 +13,7 @@ namespace LemonadeStand
         public int pitcher;
         public int cups = 10;
         public int lemonsUsed;
+        public int sugarUsed;
 
         public Player()
         {
@@ -26,7 +27,7 @@ namespace LemonadeStand
 
 
 
-        public void SetRecipe()
+        public void SetLemonsInRecipe()
         {
             Console.WriteLine("How many lemons would you like to add to 1 pitcher of lemonade?");
             bool lemons = Int32.TryParse(Console.ReadLine(), out lemonsUsed);
@@ -38,12 +39,43 @@ namespace LemonadeStand
             if (lemonsUsed > 10)
             {
                 Console.WriteLine("Are you trying to make lemonade or lemon juice? Enter less lemons.");
-                SetRecipe();
+                SetLemonsInRecipe();
+            }
+            if (lemonsUsed < 1)
+            {
+                Console.WriteLine("What is lemonade with out any lemons? Aids!? Enter more lemons.");
+                SetLemonsInRecipe();
             }
             if (lemonsUsed >= 1 && lemonsUsed <= 9)
             {
                 Console.WriteLine("You will use " + lemonsUsed + " for every pitcher of lemonade you need");
-                whatIGots.lemons -= lemonsUsed;
+                whatIGots.lemonsPerPitcher -= lemonsUsed;
+            }
+        }
+
+        public void SetSugarInRecipe()
+        { 
+            Console.WriteLine("How many cups of sugar would you like to add to 1 pitcher of lemonade?");
+            bool sugar = Int32.TryParse(Console.ReadLine(), out sugarUsed);
+            while (sugar == false)
+            {
+                Console.WriteLine("How many cups of sugar would you like to add to 1 pitcher of lemonade?");
+                sugar = Int32.TryParse(Console.ReadLine(), out sugarUsed);
+            }
+            if (sugarUsed > 10)
+            {
+                Console.WriteLine("These are people you are selling to not bees. Use less sugar!");
+                SetSugarInRecipe();
+            }
+            if (sugarUsed < 1)
+            {
+                Console.WriteLine("Who makes lemonade without sugar? .... What are you? A savage? Enter more sugar! ");
+                SetSugarInRecipe();
+            }
+            if (sugarUsed >= 1 && sugarUsed <= 9)
+            {
+                Console.WriteLine("You will use " + sugarUsed + " cups of sugar for every pitcher of lemonade you need.");
+                whatIGots.sugarPerPitcher = sugarUsed;
             }
         }
     }

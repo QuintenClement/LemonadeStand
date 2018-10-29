@@ -8,5 +8,10 @@ namespace LemonadeStand
 {
     class Day
     {
+        public int cupsSold;
+        public int cost;
+        public int grossSales;
+        public int netSales;
+
     }
 }
