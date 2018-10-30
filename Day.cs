@@ -35,16 +35,16 @@ namespace LemonadeStand
             Console.WriteLine("Forecast: " + game.weatherForecast);
             Console.WriteLine("You have $" + player.money); 
             shop.BuyCups(player);
-            shop.BuyIce(player);
             shop.BuyLemons(player);
             shop.BuySugar(player);
+            shop.BuyIce(player);
             player.SetLemonsInRecipe();
             player.SetSugarInRecipe();
             player.SetIceInRecipe();
             player.SetPrice();
             NumOfCustomers();
             DaySales(player);
-
+            DayEnd();
         }
         public void CalculateGrossSales()
         {

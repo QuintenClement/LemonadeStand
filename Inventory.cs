@@ -19,14 +19,26 @@ namespace LemonadeStand
 
         public Inventory()
         {
-           
+
         }
-
-        public void 
-            //ice = # of cubes in cups * 10(10 cups in a pitcher)
-            //0 ice at beginning of every day
-            //every pitcher takes x lemons and y sugar
-
+        public void Pitcher()
+        {
+            
+        }
+        public void NeedNewPitcher()
+        {
+            if (lemons > lemonsPerPitcher && sugar > sugarPerPitcher && ice > icePerPitcher && cups % 10 == 0)
+            {
+                lemons -= lemonsPerPitcher;
+                sugar -= sugarPerPitcher;
+                ice -= icePerPitcher;
+                
+            }
+            else
+            {
+                Console.WriteLine("Sold Out!!!");
+            }
+        }
 
 
 

@@ -13,10 +13,31 @@ namespace LemonadeStand
         public Player player;
         public int temperature;
         public string weatherForecast;
+        public int gameLength;
+        public Day day;
+        
         
         public void RunGame()
         {
-            shop.BuyLemons(player);
+            Console.WriteLine("Hello! Welcome to Lemonade stand! The objective of the game is simple.");
+            Console.WriteLine("Check the weather, buy ingredients, set a recipe and price, and MAKE MONEY!!!!");
+            Console.ReadLine();
+            Console.WriteLine("So lets get to it");
+            for (int i = 0; i < gameLength; i++)
+            {
+                day.StartDay();
+            }
+            Console.WriteLine("Well lets see how you did!");
+            Console.WriteLine("You started with $50 and you now have $" + player.money);
+            if (player.money < 50)
+            {
+                Console.WriteLine("Yikes!! You lost money! You should really become a better lemonade seller.");
+            }
+            else if (player.money > 50)
+            {
+                Console.WriteLine("Yay!! You made money! Good job, you should look into a career in sales!");
+                Console.WriteLine("You made: $" + (player.money - 50));
+            }
         }
         public void RandomTemp()
         {
@@ -40,6 +61,18 @@ namespace LemonadeStand
             {
                 temperature = hot;
             }
+
+        }
+        public void SetGameLength()
+        {
+            Console.WriteLine("How many days would you like to play for?");
+            bool test = Int32.TryParse(Console.ReadLine(), out gameLength);
+            while (test == false)
+            {
+                Console.WriteLine("How many days would you like to play for?");
+                test = Int32.TryParse(Console.ReadLine(), out gameLength);
+            }
+
 
         }
 
