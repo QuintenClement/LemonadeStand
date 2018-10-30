@@ -15,6 +15,7 @@ namespace LemonadeStand
         public string weatherForecast;
         public int gameLength;
         public Day day;
+        public string playAgain;
         
         
         public void RunGame()
@@ -29,15 +30,10 @@ namespace LemonadeStand
             }
             Console.WriteLine("Well lets see how you did!");
             Console.WriteLine("You started with $50 and you now have $" + player.money);
-            if (player.money < 50)
-            {
-                Console.WriteLine("Yikes!! You lost money! You should really become a better lemonade seller.");
-            }
-            else if (player.money > 50)
-            {
-                Console.WriteLine("Yay!! You made money! Good job, you should look into a career in sales!");
-                Console.WriteLine("You made: $" + (player.money - 50));
-            }
+            EndGame();
+            PlayAgain();
+            
+
         }
         public void RandomTemp()
         {
@@ -75,6 +71,18 @@ namespace LemonadeStand
 
 
         }
+        public void EndGame()
+        {
+            if (player.money < 50)
+            {
+                Console.WriteLine("Yikes!! You lost money! You should really become a better lemonade seller.");
+            }
+            else if (player.money > 50)
+            {
+                Console.WriteLine("Yay!! You made money! Good job, you should look into a career in sales!");
+                Console.WriteLine("You made: $" + (player.money - 50));
+            }
+        }
 
         public void RandomWeather()
         {
@@ -103,7 +111,17 @@ namespace LemonadeStand
                     break;
             }
         }
-
+        public void PlayAgain()
+        {
+            Console.WriteLine("Would you like to play again? (yes/no)");
+            playAgain = Console.ReadLine().ToLower();
+            if (playAgain == "yes")
+            {
+                RunGame();
+            }
+            else
+                break;
+        }
 
     }
 }

@@ -89,7 +89,8 @@ namespace LemonadeStand
         }
         public void DaySales(Player player)
         {
-            for (int i = 0; i < potentialCustomers; i ++)
+            bool stillHasLemonade = true;
+            for (int i = 0; i < potentialCustomers && stillHasLemonade; i ++)
             {
                 Customer customer = new Customer();
                 customer.BuyLemonade(player);

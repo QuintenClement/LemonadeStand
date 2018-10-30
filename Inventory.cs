@@ -21,22 +21,19 @@ namespace LemonadeStand
         {
 
         }
-        public void Pitcher()
-        {
-            
-        }
-        public void NeedNewPitcher()
+
+        public bool NeedNewPitcher()
         {
             if (lemons > lemonsPerPitcher && sugar > sugarPerPitcher && ice > icePerPitcher && cups % 10 == 0)
             {
                 lemons -= lemonsPerPitcher;
                 sugar -= sugarPerPitcher;
                 ice -= icePerPitcher;
-                
+                return true;
             }
             else
             {
-                Console.WriteLine("Sold Out!!!");
+                return false;
             }
         }
 
