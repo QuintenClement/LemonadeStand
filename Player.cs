@@ -13,10 +13,13 @@ namespace LemonadeStand
         public int lemonsUsed;
         public int sugarUsed;
         public int icePerCup;
+        public int pricePerCup;
+        
+        
 
         public Player()
         {
-            money = 20;
+            money = 50;
             whatIGots = new Inventory();
         }
 
@@ -100,6 +103,16 @@ namespace LemonadeStand
             {
                 Console.WriteLine("You will use " + icePerCup + " ice cubes for every cup of lemonade made.");
                 whatIGots.icePerPitcher -= icePerCup * 10;
+            }
+        }
+        public void SetPrice()
+        {
+            Console.WriteLine("How much would you like to sell each cup of lemonade for?");
+            bool price = Int32.TryParse(Console.ReadLine(), out pricePerCup);
+            while (price == false)
+            {
+                Console.WriteLine("How much would you like to sell each cup of lemonade for?");
+                price = Int32.TryParse(Console.ReadLine(), out pricePerCup);
             }
         }
     }

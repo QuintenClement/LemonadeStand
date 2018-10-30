@@ -12,6 +12,7 @@ namespace LemonadeStand
         public int moneyToSpend;
         public int chanceToBuyLemonade;
         public Day day;
+        public Player player;
         public Customer()
         {
             Customer customer = new Customer();
@@ -19,13 +20,16 @@ namespace LemonadeStand
         
         //chance to buy = 50%
         //add or subtract based on weather or temp or recipe
-        public void BuyLemonade()
+        public void BuyLemonade(Player player)
         {
             Random random = new Random();
             int buyOrNot = random.Next(1, 100);
             if (buyOrNot > chanceToBuyLemonade)
             {
                 day.cupsSold++;
+                player.money += player.pricePerCup;
+                day.customerCount++;
+                player.whatIGots.cups--;
             }
         }
         public void TemperatureEffectsOnSales()

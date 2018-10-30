@@ -34,11 +34,11 @@ namespace LemonadeStand
 
         public void BuyIce(Player player)
         {
-            Console.WriteLine("How many Ice cubes would you like to buy? $5/100 Ice cubes");
+            Console.WriteLine("How many Ice cubes would you like to buy? $5/100 ice cubes");
             bool test = Int32.TryParse(Console.ReadLine(), out ice);
             while (test == false)
             {
-                Console.WriteLine("How many Ice cubes would you like to buy? $5/100 Ice cubes");
+                Console.WriteLine("How many Ice cubes would you like to buy? $5/100 ice cubes");
                 test = Int32.TryParse(Console.ReadLine(), out ice);
             }
             player.whatIGots.icePerPitcher += ice;

@@ -12,6 +12,7 @@ namespace LemonadeStand
         public int icePerPitcher = 0;
         public int cups = 0;
         public int sugar = 0;
+        public int ice = 0;
         public int lemonsPerPitcher;
         public int sugarPerPitcher;
         public int pitchers = 0;
